@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <!-- ============================================================
+       TEMEL META ETİKETLERİ
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kırmızı Çekiç Yapı Market | Kepez, Antalya</title>
+  <meta name="description" content="Kırmızı Çekiç Yapı Market — Antalya Kepez'de yapı kimyasalları, boya, hırdavat ve nalburiye. Perakende ve toptan/proje satışı, aynı gün teslim." />
+  <meta name="keywords" content="antalya yapı market, yapı kimyasalları, derz dolgusu, seramik yapıştırıcısı, boya, hırdavat, nalburiye, toptan inşaat malzemesi" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Kırmızı Çekiç Yapı Market" />
+  <link rel="canonical" href="https://regular07.github.io/demo-yapimalzeme/" />
+
+  <!-- ============================================================
+       SEO — Open Graph ve Twitter Card
+       ============================================================ -->
+  <meta property="og:type" content="business.business" />
+  <meta property="og:site_name" content="Kırmızı Çekiç Yapı Market" />
+  <meta property="og:title" content="Kırmızı Çekiç Yapı Market | Kepez, Antalya" />
+  <meta property="og:description" content="Yapı kimyasalları, boya, hırdavat ve nalburiye. Perakende ve toptan/proje satışı, aynı gün teslim." />
+  <meta property="og:image" content="https://regular07.github.io/demo-yapimalzeme/assets/img/hero.jpg" />
+  <meta property="og:url" content="https://regular07.github.io/demo-yapimalzeme/" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kırmızı Çekiç Yapı Market" />
+  <meta name="twitter:description" content="Antalya Kepez'de yapı kimyasalları, boya, hırdavat ve nalburiye." />
+  <meta name="twitter:image" content="https://regular07.github.io/demo-yapimalzeme/assets/img/hero.jpg" />
+
+  <!-- Favicon: harici dosya yerine inline SVG, ekstra istek yaratmaz -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23201d1a'/%3E%3Ctext x='50' y='68' font-size='54' text-anchor='middle' fill='%23e8590c' font-family='Georgia,serif'%3EK%3C/text%3E%3C/svg%3E" />
+
+  <!-- ============================================================
+       HARİCİ KÜTÜPHANELER — Bootstrap 5.3 (CDN) + Bootstrap Icons +
+       Google Fonts (Barlow Condensed: başlıklar / Barlow: gövde).
+       Derleme adımı yok; site doğrudan bir statik dosya sunucusuyla
+       açılır (bkz. README).
+       ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Kendi stilimiz Bootstrap'ten SONRA: override sırası için önemli.
+       ?v= parametresi tarayıcı cache'ini kırmak için, her önemli
+       değişiklikte artırılabilir. -->
+  <link rel="stylesheet" href="style.css?v=1" />
+
+  <!-- ============================================================
+       SEO — Yapılandırılmış Veri (JSON-LD / schema.org)
+       Google'ın işletmeyi "HardwareStore" olarak tanıması için.
+       Sayfa görünümünü etkilemez.
+       ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HardwareStore",
+    "name": "Kırmızı Çekiç Yapı Market",
+    "image": "https://regular07.github.io/demo-yapimalzeme/assets/img/hero.jpg",
+    "@id": "https://regular07.github.io/demo-yapimalzeme/",
+    "url": "https://regular07.github.io/demo-yapimalzeme/",
+    "telephone": "+902420000000",
+    "priceRange": "₺₺",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sanayi Sitesi Caddesi No:47",
+      "addressLocality": "Kepez",
+      "addressRegion": "Antalya",
+      "postalCode": "07160",
+      "addressCountry": "TR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:30",
+        "closes": "17:00"
+      }
+    ],
+    "sameAs": ["https://instagram.com/"]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR — statik site, ortak include mekanizması yok, bu
+       yüzden her HTML dosyasında tekrarlanır. Aktif sayfa "active"
+       sınıfıyla işaretlenir.
+       ============================================================ -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><span class="brand-icon"><i class="bi bi-hammer"></i></span>Kırmızı <span class="hl">Çekiç</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarContent" aria-controls="navbarContent"
+              aria-expanded="false" aria-label="Menüyü aç/kapat">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Ana Sayfa</a></li>
+          <li class="nav-item"><a class="nav-link" href="urunler.html">Ürün Kataloğu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#toptan-perakende">Toptan / Perakende</a></li>
+          <li class="nav-item"><a class="nav-link" href="#iletisim">İletişim</a></li>
+          <li class="nav-item">
+            <a class="btn btn-brand ms-lg-2" href="tel:+902420000000"><i class="bi bi-telephone-fill"></i> Hemen Ara</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <header id="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
+        <span class="eyebrow"><i class="bi bi-geo-alt-fill"></i> Kepez · Antalya · 2010'dan beri</span>
+        <h1 class="hero-title">İnşaattan tadilata, <span class="hl">tek adres.</span></h1>
+        <p class="hero-sub">Yapı kimyasalları, boya, hırdavat ve nalburiye bir arada. Ustaya da ev sahibine de doğru ürünü, doğru bilgiyle veriyoruz.</p>
+        <div class="hero-btns">
+          <a href="urunler.html" class="btn btn-brand btn-lg"><i class="bi bi-grid-fill"></i> Ürün Kataloğunu İncele</a>
+          <a href="https://wa.me/905350000000?text=Merhaba%2C%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-outline-brand btn-lg"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+        </div>
+        <div class="hero-badges">
+          <span class="hero-badge"><i class="bi bi-check-circle-fill"></i> 4 kategori, 500'den fazla kalem</span>
+          <span class="hero-badge"><i class="bi bi-check-circle-fill"></i> Toptan/proje fiyatı için tek telefon</span>
+          <span class="hero-badge"><i class="bi bi-check-circle-fill"></i> Aynı gün Antalya içi teslimat</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         HAKKIMIZDA
+         ============================================================ -->
+    <section id="hakkimizda" class="section">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-12 col-lg-6">
+            <p class="sec-eyebrow">Hakkımızda</p>
+            <h2 class="sec-title">Sektörü bilen bir ekip, doğru malzemeyi önerir.</h2>
+            <p class="sec-lead">
+              Kırmızı Çekiç, 2010'dan bu yana Antalya Kepez'de hizmet veren bir yapı malzemeleri
+              ve hırdavat mağazasıdır. Derz dolgusundan zemin şapına, iç cephe boyasından
+              kilit-menteşeye kadar geniş bir ürün yelpazesini stoklarız. Satış ekibimiz teknik
+              föyleri bilir; hangi ürünün hangi zeminde, kaç saatte kürlendiğini size doğru anlatır.
+            </p>
+            <div class="about-stats">
+              <div class="about-stat"><strong>15</strong><span>yıllık deneyim</span></div>
+              <div class="about-stat"><strong>4</strong><span>ana ürün kategorisi</span></div>
+              <div class="about-stat"><strong>500+</strong><span>stoklu ürün kalemi</span></div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="about-visual">
+              <div>
+                <span class="quote-mark">"</span>
+                <p>Yanlış ürünle zaman kaybetmeyin, doğru ürünü ilk seferde alın.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         KATEGORİLER — kısa tanıtım, detay urunler.html'de
+         ============================================================ -->
+    <section id="kategoriler" class="section alt">
+      <div class="container">
+        <p class="sec-eyebrow">Ürün Grupları</p>
+        <h2 class="sec-title">Dört Ana Kategoride Tam Kadro</h2>
+        <p class="sec-lead mb-4">Kategoriye tıklayın, ürün kataloğu sayfasında ilgili ürünler otomatik filtrelensin.</p>
+        <div class="row g-4">
+          <div class="col-6 col-lg-3">
+            <a href="urunler.html#katalog" class="cat-card cat-kimyasal" data-goto-filter="kimyasal">
+              <div class="cat-icon"><i class="bi bi-droplet-half"></i></div>
+              <h3>Yapı Kimyasalları</h3>
+              <p>Derz dolgusu, seramik yapıştırıcısı, alçı, şap, silikon, PU köpük, astar.</p>
+            </a>
+          </div>
+          <div class="col-6 col-lg-3">
+            <a href="urunler.html#katalog" class="cat-card cat-boya" data-goto-filter="boya">
+              <div class="cat-icon"><i class="bi bi-paint-bucket"></i></div>
+              <h3>Boya</h3>
+              <p>İç ve dış cephe boyaları, ahşap vernik/koruyucular.</p>
+            </a>
+          </div>
+          <div class="col-6 col-lg-3">
+            <a href="urunler.html#katalog" class="cat-card cat-hirdavat" data-goto-filter="hirdavat">
+              <div class="cat-icon"><i class="bi bi-tools"></i></div>
+              <h3>Hırdavat</h3>
+              <p>Vida-dübel, kilit-menteşe, el aletleri setleri.</p>
+            </a>
+          </div>
+          <div class="col-6 col-lg-3">
+            <a href="urunler.html#katalog" class="cat-card cat-nalbur" data-goto-filter="nalbur">
+              <div class="cat-icon"><i class="bi bi-wrench-adjustable"></i></div>
+              <h3>Nalburiye</h3>
+              <p>Tesisat bağlantı elemanları, zımpara, elektrik malzemesi.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TOPTAN / PERAKENDE
+         ============================================================ -->
+    <section id="toptan-perakende" class="section">
+      <div class="container">
+        <p class="sec-eyebrow">Satış Modeli</p>
+        <h2 class="sec-title">Perakende mi, Toptan/Proje mi?</h2>
+        <p class="sec-lead mb-4">İster tek poşet alçı alın, ister yüz metrekarelik bir şantiyeyi donatın — ikisi için de ayrı bir yolumuz var.</p>
+
+        <div class="trade-tabs" role="tablist" aria-label="Satış modeli seçimi">
+          <button type="button" class="trade-tab-btn active" data-tab="perakende">Perakende</button>
+          <button type="button" class="trade-tab-btn" data-tab="toptan">Toptan / Proje</button>
+        </div>
+
+        <div class="trade-panel" data-panel="perakende">
+          <h3><i class="bi bi-bag-check-fill" style="color:var(--orange);"></i> Perakende Satış</h3>
+          <ul>
+            <li>Mağazadan tek ürün veya küçük miktarlarda alım.</li>
+            <li>Etiketli, KDV dahil raf fiyatı — pazarlık gerekmez.</li>
+            <li>Nakit, kredi kartı ve havale ile ödeme kabul edilir.</li>
+            <li>Ustanıza veya kendinize uygulama önerisi mağazada ücretsiz.</li>
+          </ul>
+          <a href="urunler.html" class="btn btn-brand"><i class="bi bi-grid-fill"></i> Ürünlere Göz At</a>
+        </div>
+        <div class="trade-panel" data-panel="toptan" hidden>
+          <h3><i class="bi bi-truck" style="color:var(--orange);"></i> Toptan / Proje Satışı</h3>
+          <ul>
+            <li>İnşaat firmaları, bayiler ve taahhüt firmaları için özel fiyatlandırma.</li>
+            <li>Palet/torba bazlı toplu alımlarda kademeli iskonto.</li>
+            <li>Şantiyeye planlı sevkiyat, cari hesap imkânı.</li>
+            <li><strong>Toptan fiyat listemiz mağaza dışına açık değildir — teklif için bizi arayın.</strong></li>
+          </ul>
+          <a href="tel:+902420000000" class="btn btn-brand"><i class="bi bi-telephone-fill"></i> Teklif İçin Ara</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ÇALIŞMA SAATLERİ + KONUM
+         ============================================================ -->
+    <section id="saatler" class="section alt">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-12 col-lg-5">
+            <p class="sec-eyebrow">Çalışma Saatleri</p>
+            <h2 class="sec-title">Ne Zaman Açığız?</h2>
+            <ul class="hours-list">
+              <li data-day="1"><span>Pazartesi</span><strong>08:00 – 19:00</strong></li>
+              <li data-day="2"><span>Salı</span><strong>08:00 – 19:00</strong></li>
+              <li data-day="3"><span>Çarşamba</span><strong>08:00 – 19:00</strong></li>
+              <li data-day="4"><span>Perşembe</span><strong>08:00 – 19:00</strong></li>
+              <li data-day="5"><span>Cuma</span><strong>08:00 – 19:00</strong></li>
+              <li data-day="6"><span>Cumartesi</span><strong>08:30 – 17:00</strong></li>
+              <li data-day="7"><span>Pazar</span><strong>Kapalı</strong></li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-7">
+            <p class="sec-eyebrow">Konum</p>
+            <h2 class="sec-title">Bizi Bulun</h2>
+            <div class="map-frame">
+              <iframe
+                src="https://maps.google.com/maps?q=Kepez%2C%20Antalya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                title="Kırmızı Çekiç Yapı Market konum haritası" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         İLETİŞİM
+         ============================================================ -->
+    <section id="iletisim" class="section">
+      <div class="container">
+        <div class="contact-panel">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-lg-7">
+              <p class="sec-eyebrow" style="color: var(--yellow);">İletişim</p>
+              <h2>Stok veya Fiyat mı Soracaksınız?</h2>
+              <ul class="contact-list">
+                <li><i class="bi bi-geo-alt-fill"></i> Sanayi Sitesi Caddesi No:47, Kepez, Antalya</li>
+                <li><i class="bi bi-telephone-fill"></i> <a href="tel:+902420000000">0242 000 00 00</a></li>
+                <li><i class="bi bi-phone-fill"></i> <a href="tel:+905350000000">0535 000 00 00</a></li>
+                <li><i class="bi bi-envelope-fill"></i> <a href="mailto:info@kirmizicekic.ornek.demo">info@kirmizicekic.ornek.demo</a></li>
+              </ul>
+              <div class="contact-cta">
+                <a href="tel:+902420000000" class="btn btn-brand"><i class="bi bi-telephone-fill"></i> Ara</a>
+                <a href="https://wa.me/905350000000?text=Merhaba%2C%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-outline-brand"><i class="bi bi-whatsapp"></i> WhatsApp'tan Yaz</a>
+              </div>
+            </div>
+            <div class="col-12 col-lg-5">
+              <div class="about-visual" style="min-height:180px;">
+                <p style="font-size: 1rem;">Bu, Demosantia tarafından hazırlanmış <strong>örnek bir demo sitedir</strong>. İşletme adı, adres ve iletişim bilgileri kurgusaldır.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-md-6">
+          <span class="footer-brand"><i class="bi bi-hammer"></i> Kırmızı <span class="hl">Çekiç</span></span>
+        </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="text-decoration-none" style="color: var(--yellow); font-size: 1.3rem;"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Kırmızı Çekiç Yapı Market. Tüm hakları saklıdır.</span>
+        <span>Web tasarım: <a href="#" style="color: var(--yellow);">Demosantia</a> — bu bir portfolyo demosudur.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sağ altta sabit hızlı erişim butonları -->
+  <a href="https://wa.me/905350000000" target="_blank" rel="noopener" id="whatsappFab" aria-label="WhatsApp ile yaz">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+  <a href="tel:+902420000000" id="callFab" aria-label="Hemen ara">
+    <i class="bi bi-telephone-fill"></i>
+  </a>
+  <button id="scrollTop" aria-label="Yukarı çık"><i class="bi bi-arrow-up"></i></button>
+
+  <!-- Teknik föy indirme demo uyarısı — urunler.html'de kullanılıyor,
+       ama Bootstrap toast bileşeni yalnızca orada tetiklenir. -->
+  <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
+    <div id="demoToast" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body"><i class="bi bi-info-circle-fill" style="color: var(--yellow);"></i> Demo sitede dosya bağlı değildir.</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Kapat"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scriptler: önce Bootstrap, en son kendi kodumuz -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

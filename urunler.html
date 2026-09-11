@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <!-- ============================================================
+       ÜRÜN KATALOĞU — Standart paketin vitrini.
+       Filtrelenebilir liste + her üründe kullanım talimatı +
+       "yanına şunu da alın" çapraz satış önerisi.
+       Filtre mantığı script.js "01" bölümünde (data-category).
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ürün Kataloğu | Kırmızı Çekiç Yapı Market</title>
+  <meta name="description" content="Yapı kimyasalları, boya, hırdavat ve nalburiye ürünleri. Her üründe kullanım talimatı, tüketim bilgisi ve birlikte kullanılan tamamlayıcı ürün önerisi." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://regular07.github.io/demo-yapimalzeme/urunler.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kırmızı Çekiç Yapı Market" />
+  <meta property="og:title" content="Ürün Kataloğu | Kırmızı Çekiç Yapı Market" />
+  <meta property="og:description" content="Yapı kimyasalları, boya, hırdavat ve nalburiye. Kullanım talimatlı ürün kataloğu." />
+  <meta property="og:image" content="https://regular07.github.io/demo-yapimalzeme/assets/img/hero.jpg" />
+  <meta property="og:url" content="https://regular07.github.io/demo-yapimalzeme/urunler.html" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ürün Kataloğu | Kırmızı Çekiç Yapı Market" />
+  <meta name="twitter:description" content="Kullanım talimatlı yapı malzemesi kataloğu." />
+  <meta name="twitter:image" content="https://regular07.github.io/demo-yapimalzeme/assets/img/hero.jpg" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23201d1a'/%3E%3Ctext x='50' y='68' font-size='54' text-anchor='middle' fill='%23e8590c' font-family='Georgia,serif'%3EK%3C/text%3E%3C/svg%3E" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=1" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><span class="brand-icon"><i class="bi bi-hammer"></i></span>Kırmızı <span class="hl">Çekiç</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarContent" aria-controls="navbarContent"
+              aria-expanded="false" aria-label="Menüyü aç/kapat">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="urunler.html">Ürün Kataloğu</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#toptan-perakende">Toptan / Perakende</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#iletisim">İletişim</a></li>
+          <li class="nav-item">
+            <a class="btn btn-brand ms-lg-2" href="tel:+902420000000"><i class="bi bi-telephone-fill"></i> Hemen Ara</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="icerik">
+
+    <header class="page-head">
+      <div class="container">
+        <h1>Ürün Kataloğu</h1>
+        <p>Her ürünün yanında nasıl uygulandığını ve birlikte kullanılması gereken tamamlayıcı ürünü de yazdık. Aradığınızı bulamazsanız arayın, stokta yoksa aynı gün tedarik ediyoruz.</p>
+      </div>
+    </header>
+
+    <section class="section" id="katalog">
+      <div class="container">
+
+        <!-- Filtre çubuğu. data-filter değerleri script.js'teki kategorilerle birebir. -->
+        <div class="filter-bar" role="group" aria-label="Ürün kategorisi filtresi">
+          <button class="filter-btn active" data-filter="tumu">Tümü</button>
+          <button class="filter-btn" data-filter="kimyasal">Yapı Kimyasalları</button>
+          <button class="filter-btn" data-filter="boya">Boya</button>
+          <button class="filter-btn" data-filter="hirdavat">Hırdavat</button>
+          <button class="filter-btn" data-filter="nalbur">Nalburiye</button>
+        </div>
+
+        <div class="row g-4" id="urunListesi">
+
+          <!-- ---------- YAPI KİMYASALLARI ---------- -->
+          <div class="col-12 col-md-6 col-lg-4 product-col">
+            <article class="product-card" data-category="kimyasal">
+              <div class="product-visual"><i class="bi bi-grid-3x3-gap-fill"></i></div>
+              <div class="product-body">
+                <span class="product-cat-tag">Yapı Kimyasalları</span>
+                <h2 class="product-name">Derz Dolgusu — Esnek, 5 kg</h2>
+                <p class="product-desc">Seramik ve doğal taş aralarını dolduran çimento esaslı esnek derz. İç ve dış mekân.</p>
+                <ul class="product-specs">
+                  <li><i class="bi bi-check2"></i> Derz aralığı: 2–12 mm</li>
+                  <li><i class="bi bi-check2"></i> Su itici, küf oluşumuna dirençli</li>
+                  <li><i class="bi bi-check2"></i> Tüketim: ~0,5 kg/m² (fayans ölçüsüne göre değişir)</li>
+                </ul>
+                <div class="product-usage">
+                  <strong>Nasıl uygulanır</strong>
+                  Yapıştırıcı tam kuruduktan sonra (24 saat) derz aralarını temizleyin. Toz malzemeyi temiz suyla topaksız karıştırın, 5 dakika dinlendirip tekrar karıştırın. Lastik derz çekçeği ile çapraz hareketlerle doldurun. 15–20 dakika sonra nemli sünger ile yüzeyi silin.
+                </div>
+                <p class="cross-sell"><i class="bi bi-lightbulb-fill"></i> <span><strong>Yanına alın:</strong> Islak hacimlerde köşe ve duvar–zemin birleşimlerine derz değil, saniter silikon uygulanır. Bir de lastik derz çekçeği + hidrofilik sünger.</span></p>
+                <div class="product-actions">
+                  <button class="btn-tds" data-tds><i class="bi bi-file-earmark-arrow-down"></i> Teknik Föy (TDS)</button>
+                  <a class="btn btn-brand flex-grow-1" href="tel:+902420000000"><i class="bi bi-telephone-fill"></i> Fiyat Sor</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 product-col">
+            <article class="product-card" data-category="kimyasal">
+              <div class="product-visual"><i class="bi bi-bricks"></i></div>
+              <div class="product-body">
+                <span class="product-cat-tag">Yapı Kimyasalları</span>
+                <h2 class="product-name">Seramik Yapıştırıcısı — C2TE, 25 kg</h2>
+                <p class="product-desc">Yüksek yapışma dayanımlı, kaymaya dirençli, açık bekleme süresi uzatılmış çimento esaslı yapıştırıcı.</p>
+                <ul class="product-specs">
+                  <li><i class="bi bi-check2"></i> Sınıf: C2TE — geniş formatlı seramik ve granit için</li>
+                  <li><i class="bi bi-check2"></i> Kap ömrü: ~4 saat · Açık bekleme: ~30 dk</li>
+                  <li><i class="bi bi-check2"></i> Tüketim: 4–6 kg/m² (tarak ölçüsüne göre)</li>
+                </ul>
+                <div class="product-usage">
+                  <strong>Nasıl uygulanır</strong>
+                  Zemin tozsuz, sağlam ve kuru olmalı. 25 kg toz için yaklaşık 6–6,5 L temiz su. Düşük devirde karıştırıp 5 dakika dinlendirin. Dişli mala ile tek yönde tarayın; 60×60 ve üzeri seramikte çift taraflı (seramik arkasına da) sürün.
+                </div>
+                <p class="cross-sell"><i class="bi bi-lightbulb-fill"></i> <span><strong>Yanına alın:</strong> Emici olmayan yüzeylerde (eski fayans üstü, şap) önce astar şart. Ayrıca derz dolgusu ve seramik çarpı (tile spacer).</span></p>
+                <div class="product-actions">
+                  <button class="btn-tds" data-tds><i class="bi bi-file-earmark-arrow-down"></i> Teknik Föy (TDS)</button>
+                  <a class="btn btn-brand flex-grow-1" href="tel:+902420000000"><i class="bi bi-telephone-fill"></i> Fiyat Sor</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 product-col">
+            <article class="product-card" data-category="kimyasal">
+              <div class="product-visual"><i class="bi bi-droplet-half"></i></div>
+              <div class="product-body">
+                <span class="product-cat-tag">Yapı Kimyasalları</span>
+                <h2 class="product-name">Saniter Silikon — Küf Önleyici, 280 ml</h2>
+                <p class="product-desc">Banyo, mutfak ve ıslak hacim birleşimleri için asetik esaslı, antifungal katkılı silikon.</p>
+                <ul class="product-specs">
+                  <li><i class="bi bi-check2"></i> Kabuk bağlama: ~10 dk · Tam kür: 24 saat</li>
+                  <li><i class="bi bi-check2"></i> Küf ve bakteri oluşumuna karşı katkılı</li>
+                  <li><i class="bi bi-check2"></i> Renk: şeffaf / beyaz / gri</li>
+                </ul>
+                <div class="product-usage">
+                  <strong>Nasıl uygulanır</strong>
+                  Yüzey kuru ve yağsız olmalı; eski silikon tamamen kazınır. Kartuş ucunu 45° kesin, tabanca ile tek hamlede çekin. Parmağınızı sabunlu suya batırıp 5 dakika içinde düzeltin. 24 saat su ile temas ettirmeyin.
+                </div>
+                <p class="cross-sell"><i class="bi bi-lightbulb-fill"></i> <span><strong>Yanına alın:</strong> Silikon tabancası, eski silikon sökme bıçağı ve maskeleme bandı — bant düz bir hat çıkmasını sağlar.</span></p>
+                <div class="product-actions">
+                  <button class="btn-tds" data-tds><i class="bi bi-file-earmark-arrow-down"></i> Teknik Föy (TDS)</button>
+                  <a class="btn btn-brand flex-grow-1" href="tel:+902420000000"><i class="bi bi-telephone-fill"></i> Fiyat Sor</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 product-col">
+            <article class="product-card" data-category="kimyasal">
+              <div class="product-visual"><i class="bi bi-layers-fill"></i></div>
+              <div class="product-body">
+                <span class="product-cat-tag">Yapı Kimyasalları</span>
+                <h2 class="product-name">Saten Alçı — 25 kg</h2>
+                <p class="product-desc">Kaba sıva ve alçı panel üzerine ince perdah tabakası. Boya öncesi pürüzsüz yüzey verir.</p>
+                <ul class="product-specs">
+                  <li><i class="bi bi-check2"></i> Uygulama kalınlığı: 1–3 mm</li>
+                  <li><i class="bi bi-check2"></i> Kap ömrü: ~60 dk</li>
+                  <li><i class="bi bi-check2"></i> Tüketim: ~1 kg/m² (1 mm kalınlıkta)</li>
+                </ul>
+                <div class="product-usage">
+                  <strong>Nasıl uygulanır</strong>
+                  Suyun içine alçıyı serpin (tersi değil), 2–3 dakika bekleyip karıştırın. Çelik mala ile ince tabaka halinde çekin. Priz almaya başlayınca ikinci pas atıp perdahlayın. Kuruduktan sonra zımparalayın.
+                </div>
+                <p class="cross-sell"><i class="bi bi-lightbulb-fill"></i> <span><strong>Yanına alın:</strong> Boya öncesi astar, 120–180 kum zımpara ve çelik mala. Emici yüzeyde astarsız boya, boyanın çabuk soluklaşmasına yol açar.</span></p>
+                <div class="product-actions">
+                  <button class="btn-tds" data-tds><i class="bi bi-file-earmark-arrow-down"></i> Teknik Föy (TDS)</button>
+                  <a class="btn btn-brand flex-grow-1" href="tel:+902420000000"><i class="bi bi-telephone-fill"></i> Fiyat Sor</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- ---------- BOYA ---------- -->
+          <div class="col-12 col-md-6 col-lg-4 product-col">
+            <article class="product-card" data-category="boya">
+              <div class="product-visual"><i class="bi bi-paint-bucket"></i></div>
+              <div class="product-body">
+                <span class="product-cat-tag">Boya</span>
+                <h2 class="product-name">İç Cephe Silikonlu Boya — 15 L</h2>
+                <p class="product-desc">Silinebilir, mat görünümlü, kokusu düşük su bazlı iç cephe boyası.</p>
+                <ul class="product-specs">
+                  <li><i class="bi bi-check2"></i> Kapatıcılık: 2 kat önerilir</li>
+                  <li><i class="bi bi-check2"></i> Katlar arası bekleme: 4–6 saat</li>
+                  <li><i class="bi bi-check2"></i> Tüketim: ~12–14 m²/L (tek kat)</li>
+                </ul>
+                <div class="product-usage">
+                  <strong>Nasıl uygulanır</strong>
+                  Yüzeydeki toz ve eski kabarmış boya temizlenir. Astar uygulanıp kuruması beklenir. Boya %10'a kadar temiz suyla inceltilebilir. Rulo ile W hareketiyle yayıp aynı yönde düzleyin. Köşeleri önce fırça ile kesin.
+                </div>
+                <p class="cross-sell"><i class="bi bi-lightbulb-fill"></i> <span><strong>Yanına alın:</strong> Astar, maskeleme bandı, koruyucu naylon örtü ve 22–25 cm rulo + teleskopik sap.</span></p>
+                <div class="product-actions">
+                  <button class="btn-tds" data-tds><i class="bi bi-file-earmark-arrow-down"></i> Teknik Föy (TDS)</button>
+                  <a class="btn btn-brand flex-grow-1" href="tel:+902420000000"><i class="bi bi-telephone-fill"></i> Fiyat Sor</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 product-col">
+            <article class="product-card" data-category="boya">
+              <div class="product-visual"><i class="bi bi-brush-fill"></i></div>
+              <div class="product-body">
+                <span class="product-cat-tag">Boya</span>
+                <h2 class="product-name">Dış Cephe Akrilik Boya — 15 L</h2>
+                <p class="product-desc">UV ve yağmura dayanıklı, nefes alan, kir tutmayan dış cephe kaplaması.</p>
+                <ul class="product-specs">
+                  <li><i class="bi bi-check2"></i> Su iticilik yüksek, su buharı geçirgen</li>
+                  <li><i class="bi bi-check2"></i> Uygulama sıcaklığı: +5 °C ile +30 °C arası</li>
+                  <li><i class="bi bi-check2"></i> Tüketim: ~8–10 m²/L (tek kat)</li>
+                </ul>
+                <div class="product-usage">
+                  <strong>Nasıl uygulanır</strong>
+                  Yüzey basınçlı su ile yıkanır, çatlaklar dolgu macunu ile kapatılır. Dış cephe astarı sürülür. Yağmur beklenen günde ve doğrudan güneş altında uygulama yapmayın.
+                </div>
+                <p class="cross-sell"><i class="bi bi-lightbulb-fill"></i> <span><strong>Yanına alın:</strong> Dış cephe astarı, cephe dolgu macunu ve akrilik mastik — çatlaklar kapatılmadan boya kısa sürede çatlar.</span></p>
+                <div class="product-actions">
+                  <button class="btn-tds" data-tds><i class="bi bi-file-earmark-arrow-down"></i> Teknik Föy (TDS)</button>
+                  <a class="btn btn-brand flex-grow-1" href="tel:+902420000000"><i class="bi bi-telephone-fill"></i> Fiyat Sor</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- ---------- HIRDAVAT ---------- -->
+          <div class="col-12 col-md-6 col-lg-4 product-col">
+            <article class="product-card" data-category="hirdavat">
+              <div class="product-visual"><i class="bi bi-tools"></i></div>
+              <div class="product-body">
+                <span class="product-cat-tag">Hırdavat</span>
+                <h2 class="product-name">Vida & Dübel Seti — 400 parça</h2>
+                <p class="product-desc">Beton, tuğla, alçıpan ve ahşap için karma ölçülerde vida–dübel organizer.</p>
+                <ul class="product-specs">
+                  <li><i class="bi bi-check2"></i> Ölçüler: 5×25 – 8×60 mm arası</li>
+                  <li><i class="bi bi-check2"></i> Alçıpan için kelebek dübel dahil</li>
+                  <li><i class="bi bi-check2"></i> Bölmeli taşıma çantası</li>
+                </ul>
+                <div class="product-usage">
+                  <strong>Nasıl kullanılır</strong>
+                  Dübel çapı ile matkap ucu çapı AYNI olmalı (8'lik dübele 8'lik uç). Delik derinliği dübelden 5–10 mm fazla açılır, tozu üfleyip temizleyin. Alçıpanda normal dübel tutmaz — kelebek dübel kullanın.
+                </div>
+                <p class="cross-sell"><i class="bi bi-lightbulb-fill"></i> <span><strong>Yanına alın:</strong> SDS matkap ucu seti ve toz emici aparat. Ağır yük asılacaksa kimyasal ankraj sorun.</span></p>
+                <div class="product-actions">
+                  <button class="btn-tds" data-tds><i class="bi bi-file-earmark-arrow-down"></i> Ürün Bilgi Föyü</button>
+                  <a class="btn btn-brand flex-grow-1" href="tel:+902420000000"><i class="bi bi-telephone-fill"></i> Fiyat Sor</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 product-col">
+            <article class="product-card" data-category="hirdavat">
+              <div class="product-visual"><i class="bi bi-door-closed-fill"></i></div>
+              <div class="product-body">
+                <span class="product-cat-tag">Hırdavat</span>
+                <h2 class="product-name">Çelik Kapı Kilidi — Silindirli</h2>
+                <p class="product-desc">Barel değişimli, kopmaya dayanıklı çelik kapı kilit göbeği ve karşılık takımı.</p>
+                <ul class="product-specs">
+                  <li><i class="bi bi-check2"></i> Silindir boyu: 70 mm (35+35)</li>
+                  <li><i class="bi bi-check2"></i> 5 adet anahtar, kopmaya karşı çelik pimli</li>
+                  <li><i class="bi bi-check2"></i> Sağ/sol kullanıma uygun</li>
+                </ul>
+                <div class="product-usage">
+                  <strong>Nasıl değiştirilir</strong>
+                  Kapı kenarındaki tespit vidasını sökün, anahtarı yarım tur çevirip silindiri dışarı çekin. Yeni silindiri yerleştirip vidayı takın. Silindir boyu kapı kalınlığına uymazsa zorlamayın, ölçü alıp gelin.
+                </div>
+                <p class="cross-sell"><i class="bi bi-lightbulb-fill"></i> <span><strong>Yanına alın:</strong> Kilit yağı (grafitli) ve kapı altı fırça fitil. Yeni taşınılan eve kilit göbeği değişimi önerilir.</span></p>
+                <div class="product-actions">
+                  <button class="btn-tds" data-tds><i class="bi bi-file-earmark-arrow-down"></i> Ürün Bilgi Föyü</button>
+                  <a class="btn btn-brand flex-grow-1" href="tel:+902420000000"><i class="bi bi-telephone-fill"></i> Fiyat Sor</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- ---------- NALBURİYE ---------- -->
+          <div class="col-12 col-md-6 col-lg-4 product-col">
+            <article class="product-card" data-category="nalbur">
+              <div class="product-visual"><i class="bi bi-wrench-adjustable"></i></div>
+              <div class="product-body">
+                <span class="product-cat-tag">Nalburiye</span>
+                <h2 class="product-name">PPRC Tesisat Bağlantı Seti</h2>
+                <p class="product-desc">Temiz su tesisatı için dirsek, te, manşon ve geçiş rakoru karma paketi.</p>
+                <ul class="product-specs">
+                  <li><i class="bi bi-check2"></i> Çap: 20 mm ve 25 mm</li>
+                  <li><i class="bi bi-check2"></i> Sıcak/soğuk su hattına uygun</li>
+                  <li><i class="bi bi-check2"></i> Pirinç dişli geçiş parçaları dahil</li>
+                </ul>
+                <div class="product-usage">
+                  <strong>Nasıl uygulanır</strong>
+                  Boru ucu gönyesinde kesilir, çapak alınır. Kaynak makinesi 260 °C'ye ısıtılır; boru ve ek parça aynı anda kovana sokulup süre kadar beklenir (20 mm için ~5 sn). Çıkarıp döndürmeden düz bastırın, 2 dakika soğumaya bırakın.
+                </div>
+                <p class="cross-sell"><i class="bi bi-lightbulb-fill"></i> <span><strong>Yanına alın:</strong> PPRC kaynak makinesi (günlük kiralık da veriyoruz), boru makası ve teflon bant.</span></p>
+                <div class="product-actions">
+                  <button class="btn-tds" data-tds><i class="bi bi-file-earmark-arrow-down"></i> Ürün Bilgi Föyü</button>
+                  <a class="btn btn-brand flex-grow-1" href="tel:+902420000000"><i class="bi bi-telephone-fill"></i> Fiyat Sor</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 product-col">
+            <article class="product-card" data-category="nalbur">
+              <div class="product-visual"><i class="bi bi-lightning-charge-fill"></i></div>
+              <div class="product-body">
+                <span class="product-cat-tag">Nalburiye</span>
+                <h2 class="product-name">NYA Kablo — 2,5 mm², 100 m</h2>
+                <p class="product-desc">Priz ve sortie hatları için tek damarlı, PVC yalıtımlı bakır iletken.</p>
+                <ul class="product-specs">
+                  <li><i class="bi bi-check2"></i> Kesit: 2,5 mm² (priz hattı standardı)</li>
+                  <li><i class="bi bi-check2"></i> Renk seçenekleri: kahve / mavi / sarı-yeşil</li>
+                  <li><i class="bi bi-check2"></i> %100 elektrolitik bakır</li>
+                </ul>
+                <div class="product-usage">
+                  <strong>Nasıl seçilir</strong>
+                  Aydınlatma hattı 1,5 mm², priz hattı 2,5 mm², elektrikli ısıtıcı/ocak hattı 4–6 mm². Topraklama için sarı-yeşil kablo zorunludur. Elektrik işini yetkili kişi yapmalıdır.
+                </div>
+                <p class="cross-sell"><i class="bi bi-lightbulb-fill"></i> <span><strong>Yanına alın:</strong> Spiral boru, buat kutusu, klemens ve kablo kanalı. Sigorta kutusu revizyonu gerekiyorsa ölçü alıp gelin.</span></p>
+                <div class="product-actions">
+                  <button class="btn-tds" data-tds><i class="bi bi-file-earmark-arrow-down"></i> Ürün Bilgi Föyü</button>
+                  <a class="btn btn-brand flex-grow-1" href="tel:+902420000000"><i class="bi bi-telephone-fill"></i> Fiyat Sor</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <p class="sec-lead mt-5 mb-0">
+          Katalogda göremediğiniz ürün için <a href="tel:+902420000000">0242 000 00 00</a> numarasını arayın ya da
+          <a href="https://wa.me/905350000000" target="_blank" rel="noopener">WhatsApp'tan</a> marka/ölçü yazın —
+          stokta yoksa aynı gün tedarik ediyoruz.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-md-6">
+          <span class="footer-brand"><i class="bi bi-hammer"></i> Kırmızı <span class="hl">Çekiç</span></span>
+        </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="text-decoration-none" style="color: var(--yellow); font-size: 1.3rem;"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Kırmızı Çekiç Yapı Market. Tüm hakları saklıdır.</span>
+        <span>Web tasarım: <a href="#" style="color: var(--yellow);">Demosantia</a> — bu bir portfolyo demosudur.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sağ altta sabit hızlı erişim butonları -->
+  <a href="https://wa.me/905350000000" target="_blank" rel="noopener" id="whatsappFab" aria-label="WhatsApp ile yaz">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+  <a href="tel:+902420000000" id="callFab" aria-label="Hemen ara">
+    <i class="bi bi-telephone-fill"></i>
+  </a>
+  <button id="scrollTop" aria-label="Yukarı çık"><i class="bi bi-arrow-up"></i></button>
+
+  <!-- Teknik föy butonuna basılınca çıkan demo uyarısı -->
+  <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
+    <div id="demoToast" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body"><i class="bi bi-info-circle-fill" style="color: var(--yellow);"></i> Demo sitede dosya bağlı değildir.</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Kapat"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
