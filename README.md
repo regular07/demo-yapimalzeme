@@ -1,4 +1,4 @@
-# Kırmızı Çekiç Yapı Market — Demosantia portfolyo demosu
+# Kırmızı Çekiç Yapı Market — Demosentia portfolyo demosu
 
 Yapı malzemeleri / hırdavat sektörü için **Standart paket** örneği.
 Tüm işletme bilgileri (ad, adres, telefon, e-posta) **kurgusaldır**.
